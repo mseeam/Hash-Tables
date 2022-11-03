@@ -1,7 +1,7 @@
 /********************************************************************************
  * File  :   linkedlist.h                                                       *
  * Author: Mohammad Seeam                                                       *
- * Assignment 6: Linked List                                                    *
+ * Assignment 7: Hash Tables                                                    *
  * Create a fully functional doubly linked list class                           *
  * This header structure for all cpp and h files.                               *
  * This file, linkedlist.h includes only data.h                                 *
