@@ -176,7 +176,8 @@ void LinkedList::printList(bool backward){
     Node* current=head;
     Node* lastNonNullNode;
     while (current != NULL) {
-        if(!backward){std::cout  << current->data.id << " and "<<current->data.data<<std::endl;}
+        if(!backward && current->next!=NULL){std::cout  << current->data.id << " --> ";}
+        else{std::cout<<current->data.id<<std::endl;}
         lastNonNullNode=current;
         current = current->next;
     }
@@ -184,9 +185,8 @@ void LinkedList::printList(bool backward){
     if(backward){
         current = lastNonNullNode;
         while (current != NULL) {
-            std::cout  << current->data.id << " and "<<current->data.data<<std::endl;
+            std::cout  << current->data.id << " --> "<<std::endl;;
             current = current->prev;
         }
     }
 }
-
