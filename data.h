@@ -1,10 +1,11 @@
-/* 
- * File: data.h
- * Author: Alex Katrompas
- * 
- * DO NOT MODIFY THIS FILE
- * LEAVE THIS COMMENT HEADER HERE
- */
+/********************************************************************************
+ * File  :   data.h                                                             *
+ * Author: Mohammad Seeam                                                       *
+ * Assignment 7: Hash Tables                                                    *
+ * contains structs                                                             *
+ * This header structure for all cpp and h files.                               *
+ * This file, data.h                                                            *
+ *******************************************************************************/
 
 #ifndef DATA_H
 #define DATA_H
@@ -17,11 +18,10 @@ struct Data {
     string data;
 };
 
-struct Node {
+struct Node{
     Data data;
     Node* next;
     Node* prev;
 };
 
 #endif /* DATA_H */
-
