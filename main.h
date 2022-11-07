@@ -1,6 +1,9 @@
-/* 
- * your comment header here
- */
+/********************************************************************************
+ * File  :   main.h                                                             *
+ * Author: Mohammad Seeam                                                       *
+ * Assignment 7: Hash Tables                                                    *                                       *
+ * This header structure for all cpp and h files.                               *
+ *******************************************************************************/
 
 #ifndef MAIN_H
 #define MAIN_H
@@ -9,6 +12,7 @@
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
 #include <string>       /* string */
+#include "hashtable.h"
 
 #define BUFFERSIZE 8
 #define MAXID 100
@@ -18,5 +22,6 @@
 using std::cout;
 using std::endl;
 using std::string;
+
 
 #endif /* MAIN_H */
