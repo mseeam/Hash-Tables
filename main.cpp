@@ -1,11 +1,15 @@
-/* 
- * your comment header here
- */
+/********************************************************************************
+ * File  :   main.cpp                                                           *
+ * Author: Mohammad Seeam                                                       *
+ * Assignment 7: Hash Tables                                                    *
+ * This header structure for all cpp and h files.                               *
+ * This file, main.cpp includes only main.h                                     *
+ *******************************************************************************/
 
 #include "main.h"
 
 int main() {
-    //seed the rand function
+
     srand(time(NULL));
 
     /*
@@ -14,6 +18,7 @@ int main() {
      * Do not modify this code from here to the next comment telling
      * you to "START HERE"
      */
+    
     const int testdatasize = BASE + (rand() % OFFSET + 1);
     int ids[testdatasize];
     string strs[testdatasize];
@@ -32,34 +37,59 @@ int main() {
     ids[testdatasize-1] = - 1;
     strs[testdatasize-1] = "known bad";
     
-    /*
-     * Show test data
-     */
+
+
     cout << "Showing Test Data (" << testdatasize << " entries)..." << endl;
     for (int i = 0; i < testdatasize; i++) {
         cout << ids[i] << " : " << strs[i] << endl;
     }
     cout << endl;
 
-    /*
-     * Now you have two parallel arrays with ids and strings for test data.
-     * START HERE and create your hash table and use the test data to show
-     * it works.
-     */
-    
-    // create your hash table object here
-    
-    // show it is empty by calling getCount and printTable
-    
-    // try and put ALL the test data into the table and show what happens
-
+    // create Hashtable object here
     // continue using and testing your table, add and remove data,
     // do whatever it takes to full test your object and prove it
     // is robust and can handle all use cases.
 
+    Hashtable hash;
     
+    // show it is empty by calling getCount and printTable
+    std::cout << "hash.getCount() before insert: " << hash.getCount() << std::endl << std::endl;
+    std::cout << "printing table: " <<  std::endl << std::endl;
+    hash.printTable();  std::cout<<std::endl;
+
+    // try and put ALL the test data into the table and show what happens
+    std::cout << "inserting new data...";
+    for (int i = 0; i < testdatasize; i++) {
+        hash.insertEntry(ids[i], &strs[i]);
+    }std::cout << "data inserted..." << std::endl;
+
+    std::cout << std::endl << "printing table after insert: " << std::endl <<std::endl;
     
+    hash.printTable();
+
+    std::cout << std::endl << "hash.getCount() after insert: " << hash.getCount() << std::endl <<std::endl;
+
+    int random=testdatasize/2;
+    std::cout << "deleting "<<random <<" of the elements from the hashtable...";
+    for (int i = 0; i < testdatasize/2; i++) {
+        hash.removeEntry(ids[i]);
+    }
+    std::cout << random<< " elements of the hashtab deleted." << std::endl;
+
+    std::cout << std::endl << "printing table after delete "<<random << std::endl <<std::endl;
     
+    hash.printTable();
+
+    std::cout << std::endl << "hash.getCount() after delete: " << hash.getCount() << std::endl <<std::endl;
+
+    cout << "Using getData() to find data..." << endl;
+    for (int i = 0; i < testdatasize; i++){
+        if(hash.getData(ids[i])!=""){
+            std::cout<<"After searching id "<<ids[i]<<", we get data :"<< hash.getData(ids[i]) << std::endl;
+        }else {
+            std::cout<<"After searching id "<<ids[i]<<", we get data : EMPTY"<< std::endl;
+        }
+    }
     
     return 0;
 }
